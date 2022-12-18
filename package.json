@@ -1,0 +1,68 @@
+{
+  "name": "y-vue-cli",
+  "version": "0.0.0",
+  "description": "vue template cli",
+  "homepage": "https://github.com/GGupzHH/y-vue-cli",
+  "main": "lib/index.js",
+  "type": "module",
+  "bin": {
+    "next-cli": "next-create.js"
+  },
+  "author": {
+    "name": "GGupzHH",
+    "email": "1248023357@qq.com",
+    "url": "https://github.com/GGupzHH"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "cli",
+    "vue",
+    "template"
+  ],
+  "devDependencies": {
+    "async": "^3.2.4",
+    "chalk": "^5.2.0",
+    "commander": "^9.4.1",
+    "download-git-repo": "^3.0.2",
+    "eslint": "^8.29.0",
+    "eslint-plugin-import": "^2.26.0",
+    "handlebars": "^4.7.7",
+    "inquirer": "^9.1.4",
+    "metalsmith": "^2.5.1",
+    "minimatch": "^5.1.1",
+    "ora": "^6.1.2"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo"
+    ],
+    "env": {
+      "node": true
+    },
+    "rules": {},
+    "plugins": []
+  },
+  "scripts": {},
+  "repository": "git@github.com:GGupzHH/y-vue-cli.git",
+  "license": "MIT"
+}
