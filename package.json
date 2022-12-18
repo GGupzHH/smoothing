@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "description": "vue template cli",
   "homepage": "https://github.com/GGupzHH/y-vue-cli",
-  "main": "lib/index.js",
   "type": "module",
   "bin": {
-    "next-cli": "next-create.js"
+    "y-vue-cli": "y-vue-cli.js"
   },
   "author": {
     "name": "GGupzHH",
@@ -35,6 +34,7 @@
     "ora": "^6.1.2"
   },
   "engines": {
+    "node": "^12.0.0 || >= 14.0.0",
     "npm": ">= 4.0.0"
   },
   "lint-staged": {
@@ -64,5 +64,7 @@
   },
   "scripts": {},
   "repository": "git@github.com:GGupzHH/y-vue-cli.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  }
 }
