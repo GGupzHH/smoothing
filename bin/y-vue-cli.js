@@ -53,8 +53,9 @@ function run() {
     text: `${chalk.green('downloading template')}`,
   })
   spinner.start()
+  // TODO 这里可以先获取用户输入，然后下载文件的时候过滤去填充
   download(`tccsg/next-template`, targetPath, {}, err => {
-    generate(templateName, targetPath, to, (err) => { // 构建完成的回调函数
+    generate(templateName, targetPath, (err) => { // 构建完成的回调函数
       if (err) console.log(err) // 如果构建失败就输出失败原因
     })
     spinner.stop()
