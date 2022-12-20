@@ -39,11 +39,11 @@ console.log(program.args, '-----')
 const targetPath = path.join(process.cwd(), templateName) // 模版的路径  cwd是当前运行的脚本是在哪个路径下运行 tem
 console.log(targetPath)
 
-if (exists.existsSync(targetPath)) {
-  console.log(chalk.red('  # The same project name already exists in the current directory.'))
-} else {
+// if (exists.existsSync(targetPath)) {
+//   console.log(chalk.red('  # The same project name already exists in the current directory.'))
+// } else {
   run()
-}
+// }
 
 /**
  * run函数则是用来调用generate来构建项目
@@ -52,14 +52,15 @@ function run() {
   const spinner = ora({
     text: `${chalk.green('downloading template')}`,
   })
-  spinner.start()
+  // spinner.start()
   // TODO 这里可以先获取用户输入，然后下载文件的时候过滤去填充
-  download(`tccsg/next-template`, targetPath, {}, err => {
-    generate(templateName, targetPath, (err) => { // 构建完成的回调函数
-      if (err) console.log(err) // 如果构建失败就输出失败原因
-    })
-    spinner.stop()
-    if (err) return
-    console.log(chalk.green(`模版下载完成 ${ targetPath }`))
+  generate(templateName, targetPath, (err) => { // 构建完成的回调函数
+    console.log('构建完成')
+    if (err) console.log(err) // 如果构建失败就输出失败原因
   })
+  // download(`tccsg/next-template`, targetPath, {}, err => {
+  //   spinner.stop()
+  //   if (err) return
+  //   console.log(chalk.green(`模版下载完成 ${ targetPath }`))
+  // })
 }
