@@ -5,7 +5,7 @@
   "homepage": "https://github.com/GGupzHH/y-vue-cli",
   "type": "module",
   "bin": {
-    "y-vue-cli": "y-vue-cli.js"
+    "y-vue-cli": "./bin/y-vue-cli.js"
   },
   "author": {
     "name": "GGupzHH",
@@ -23,6 +23,8 @@
   "devDependencies": {
     "async": "^3.2.4",
     "chalk": "^5.2.0",
+    "cli-handle-unhandled": "^1.1.1",
+    "cli-welcome": "^2.2.2",
     "commander": "^9.4.1",
     "download-git-repo": "^3.0.2",
     "eslint": "^8.29.0",
@@ -64,7 +66,5 @@
   },
   "scripts": {},
   "repository": "git@github.com:GGupzHH/y-vue-cli.git",
-  "license": "MIT",
-  "dependencies": {
-  }
+  "license": "MIT"
 }

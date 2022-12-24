@@ -6,6 +6,9 @@ import exists from 'fs'
 import generate from '../lib/generate.js'
 import download from 'download-git-repo'
 import ora from 'ora'
+import welcome from 'cli-welcome'
+import unhandled from 'cli-handle-unhandled'
+import pkg from '../package.json' assert { type: 'json' }
 
 import { readFile } from 'fs/promises'
 
@@ -14,7 +17,21 @@ import { readFile } from 'fs/promises'
  * 当在终端输入 dg --help 或者没有跟参数的话
  * 会输出提示
  */
-function initHelp () {
+function init () {
+  // ({ clear = true }) => {
+  //   unhandled();
+    welcome({
+      title: `generate-web-components`,
+      tagLine: `by Brandon Zhang`,
+      description: pkg.description,
+      version: pkg.version,
+      bgColor: '#36BB09',
+      color: '#000000',
+      bold: true,
+      // clear
+    });
+  // }
+
   program.on('--help', () => { {
     console.log('  Examples:')
     console.log()
@@ -26,12 +43,9 @@ function initHelp () {
   if (program.args.length < 1) return program.help()
 }
 
-
-
-
 function start() {
 
-  initHelp()
+  init()
   /**
    * 获取命令行参数
    */
@@ -76,6 +90,5 @@ function run(templateName, targetPath) {
   })
 }
 
-
-
 start()
+// init()
