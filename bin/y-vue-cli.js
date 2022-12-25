@@ -1,35 +1,38 @@
-import { program } from 'commander'
-import path from 'path'
-import chalk from 'chalk'
-import inquirer from 'inquirer'
-import exists from 'fs'
-import generate from '../lib/generate.js'
-import download from 'download-git-repo'
-import ora from 'ora'
-import welcome from 'cli-welcome'
-import unhandled from 'cli-handle-unhandled'
-import pkg from '../package.json' assert { type: 'json' }
+#!/usr/bin/env node
+"use strict";
 
-import { readFile } from 'fs/promises'
+const path = require('path')
+// import { program } from 'commander'
+// import chalk from 'chalk'
+// import inquirer from 'inquirer'
+// import exists from 'fs'
+// import generate from '../lib/generate.js'
+// import download from 'download-git-repo'
+// import ora from 'ora'
+// import welcome from 'cli-welcome'
+// import unhandled from 'cli-handle-unhandled'
+// import pkg from '../package.json' assert { type: 'json' }
+
+// import { readFile } from 'fs/promises'
 
 /**
  * 注册一个help的命令
  * 当在终端输入 dg --help 或者没有跟参数的话
- * 会输出提示
+ * 会输出提示------------------
  */
 function init () {
   // ({ clear = true }) => {
   //   unhandled();
-    welcome({
-      title: `generate-web-components`,
-      tagLine: `by Brandon Zhang`,
-      description: pkg.description,
-      version: pkg.version,
-      bgColor: '#36BB09',
-      color: '#000000',
-      bold: true,
-      // clear
-    });
+    // welcome({
+    //   title: `generate-web-components`,
+    //   tagLine: `by Brandon Zhang`,
+    //   description: pkg.description,
+    //   version: pkg.version,
+    //   bgColor: '#36BB09',
+    //   color: '#000000',
+    //   bold: true,
+    //   // clear
+    // });
   // }
 
   program.on('--help', () => { {
@@ -90,5 +93,6 @@ function run(templateName, targetPath) {
   })
 }
 
-start()
+console.log(process.cwd())
+// start()
 // init()

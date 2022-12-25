@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "description": "vue template cli",
   "homepage": "https://github.com/GGupzHH/y-vue-cli",
-  "type": "module",
   "bin": {
     "y-vue-cli": "./bin/y-vue-cli.js"
   },
