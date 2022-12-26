@@ -1,6 +1,6 @@
 {
-  "name": "g-vue-cli",
-  "version": "0.0.2",
+  "name": "smoothing",
+  "version": "0.0.5",
   "description": "vue template cli",
   "homepage": "https://github.com/GGupzHH/y-vue-cli",
   "bin": {
@@ -20,6 +20,8 @@
     "template"
   ],
   "devDependencies": {
+  },
+  "dependencies": {
     "async": "^3.2.4",
     "chalk": "^4.1.2",
     "cli-handle-unhandled": "^1.1.1",
