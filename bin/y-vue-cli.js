@@ -2,18 +2,18 @@
 "use strict";
 
 const path = require('path')
-// import { program } from 'commander'
-// import chalk from 'chalk'
-// import inquirer from 'inquirer'
-// import exists from 'fs'
-// import generate from '../lib/generate.js'
-// import download from 'download-git-repo'
-// import ora from 'ora'
-// import welcome from 'cli-welcome'
-// import unhandled from 'cli-handle-unhandled'
-// import pkg from '../package.json' assert { type: 'json' }
+const chalk = require('chalk')
+const { program } = require('commander')
+const inquirer = require('inquirer')
+const download = require('download-git-repo')
+const exists = require('fs')
+const generate = require('../lib/generate.js')
+const ora = require('ora')
+const welcome = require('cli-welcome')
+const unhandled = require('cli-handle-unhandled')
+const pkg = require('../package.json')
 
-// import { readFile } from 'fs/promises'
+const { readFile } = require('fs/promises')
 
 /**
  * 注册一个help的命令
@@ -75,24 +75,24 @@ function run(templateName, targetPath) {
   const spinner = ora({
     text: `${chalk.green('downloading template')}`,
   })
-  spinner.start()
-  // TODO 这里可以先获取用户输入，然后下载文件的时候过滤去填充
-  download(`GGupzHH/Vue3-Vite3-TS-Template#y-cli-template`, targetPath, {}, err => {
-    spinner.stop()
-    if (err) return
-    // console.log(chalk.green(`模版下载完成 ${ targetPath }`))
-    generate(templateName, targetPath, (err) => { // 构建完成的回调函数
-      console.log('构建完成')
-      console.log(`🎉  Successfully created project ${templateName}.`)
-      console.log(`👉  Get started with the following commands:`)
-      console.log(` $ cd ${templateName}`)
-      console.log(` $ yarn serve`)
-      
-      if (err) console.log(err) // 如果构建失败就输出失败原因
-    })
+  // spinner.start()
+  // // TODO 这里可以先获取用户输入，然后下载文件的时候过滤去填充
+  // download(`GGupzHH/Vue3-Vite3-TS-Template#y-cli-template`, targetPath, {}, err => {
+  //   spinner.stop()
+  //   if (err) return
+  //   // console.log(chalk.green(`模版下载完成 ${ targetPath }`))
+  // })
+  generate(templateName, targetPath, (err) => { // 构建完成的回调函数
+    console.log('构建完成')
+    console.log(`🎉  Successfully created project ${templateName}.`)
+    console.log(`👉  Get started with the following commands:`)
+    console.log(` $ cd ${templateName}`)
+    console.log(` $ yarn serve`)
+    
+    if (err) console.log(err) // 如果构建失败就输出失败原因
   })
 }
 
-console.log(process.cwd())
-// start()
+// console.log(process.cwd())
+start()
 // init()
