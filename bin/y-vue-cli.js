@@ -23,16 +23,16 @@ const { readFile } = require('fs/promises')
 function init () {
   // ({ clear = true }) => {
   //   unhandled();
-    // welcome({
-    //   title: `generate-web-components`,
-    //   tagLine: `by Brandon Zhang`,
-    //   description: pkg.description,
-    //   version: pkg.version,
-    //   bgColor: '#36BB09',
-    //   color: '#000000',
-    //   bold: true,
-    //   // clear
-    // });
+    welcome({
+      title: `g-vue-cli`,
+      tagLine: `by Brandon Zhang`,
+      description: pkg.description,
+      version: pkg.version,
+      bgColor: '#36BB09',
+      color: '#000000',
+      bold: true,
+      // clear
+    });
   // }
 
   program.on('--help', () => { {
@@ -75,21 +75,21 @@ function run(templateName, targetPath) {
   const spinner = ora({
     text: `${chalk.green('downloading template')}`,
   })
-  // spinner.start()
-  // // TODO 这里可以先获取用户输入，然后下载文件的时候过滤去填充
-  // download(`GGupzHH/Vue3-Vite3-TS-Template#y-cli-template`, targetPath, {}, err => {
-  //   spinner.stop()
-  //   if (err) return
-  //   // console.log(chalk.green(`模版下载完成 ${ targetPath }`))
-  // })
-  generate(templateName, targetPath, (err) => { // 构建完成的回调函数
-    console.log('构建完成')
-    console.log(`🎉  Successfully created project ${templateName}.`)
-    console.log(`👉  Get started with the following commands:`)
-    console.log(` $ cd ${templateName}`)
-    console.log(` $ yarn serve`)
-    
-    if (err) console.log(err) // 如果构建失败就输出失败原因
+  spinner.start()
+  // TODO 这里可以先获取用户输入，然后下载文件的时候过滤去填充
+  download(`GGupzHH/Vue3-Vite3-TS-Template#y-cli-template`, targetPath, {}, err => {
+    spinner.stop()
+    if (err) return
+    generate(templateName, targetPath, (err) => { // 构建完成的回调函数
+      console.log('构建完成')
+      console.log(`🎉  Successfully created project ${templateName}.`)
+      console.log(`👉  Get started with the following commands:`)
+      console.log(` $ cd ${templateName}`)
+      console.log(` $ yarn serve`)
+      
+      if (err) console.log(err) // 如果构建失败就输出失败原因
+    })
+    // console.log(chalk.green(`模版下载完成 ${ targetPath }`))
   })
 }
 
