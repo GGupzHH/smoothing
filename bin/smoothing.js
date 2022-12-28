@@ -9,8 +9,6 @@ const download = require('download-git-repo')
 const exists = require('fs')
 const generate = require('../lib/generate.js')
 const ora = require('ora')
-const welcome = require('cli-welcome')
-const unhandled = require('cli-handle-unhandled')
 const pkg = require('../package.json')
 
 const { readFile } = require('fs/promises')
@@ -23,16 +21,16 @@ const { readFile } = require('fs/promises')
 function init () {
   // ({ clear = true }) => {
   //   unhandled();
-    welcome({
-      title: `g-vue-cli`,
-      tagLine: `by Brandon Zhang`,
-      description: pkg.description,
-      version: pkg.version,
-      bgColor: '#36BB09',
-      color: '#000000',
-      bold: true,
-      // clear
-    });
+    // welcome({
+    //   title: `smoothing`,
+    //   tagLine: `by Brandon Zhang`,
+    //   description: pkg.description,
+    //   version: pkg.version,
+    //   bgColor: '#36BB09',
+    //   color: '#000000',
+    //   bold: true,
+    //   // clear
+    // });
   // }
 
   program.on('--help', () => { {

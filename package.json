@@ -4,6 +4,7 @@
   "description": "vue template cli",
   "homepage": "https://github.com/GGupzHH/smoothing",
   "bin": {
+    "smoothing": "./bin/smoothing.js",
     "smo": "./bin/smoothing.js"
   },
   "author": {
@@ -19,17 +20,11 @@
     "vue",
     "template"
   ],
-  "devDependencies": {
-  },
   "dependencies": {
     "async": "^3.2.4",
     "chalk": "^4.1.2",
-    "cli-handle-unhandled": "^1.1.1",
-    "cli-welcome": "^2.2.2",
     "commander": "^9.4.1",
     "download-git-repo": "^3.0.2",
-    "eslint": "^8.29.0",
-    "eslint-plugin-import": "^2.26.0",
     "handlebars": "^4.7.7",
     "inquirer": "^8.2.5",
     "metalsmith": "^2.5.1",
