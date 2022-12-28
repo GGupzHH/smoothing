@@ -4,7 +4,7 @@
   "description": "vue template cli",
   "homepage": "https://github.com/GGupzHH/smoothing",
   "bin": {
-    "smoothing": "./bin/smoothing.js"
+    "smo": "./bin/smoothing.js"
   },
   "author": {
     "name": "GGupzHH",
