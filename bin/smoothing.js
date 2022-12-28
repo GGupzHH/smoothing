@@ -33,14 +33,20 @@ function init () {
     // });
   // }
 
-  program.on('--help', () => { {
-    console.log('  Examples:')
-    console.log()
-    console.log(chalk.gray('    # create a new project with an template'))
-    console.log('    $ node bin/y-vue-cli.js dgtemplate my-project')
-  } })
+  program
+    .version(pkg.version)
+    .on('--help', 
+      () => { 
+        {
+          console.log()
+          console.log('Examples:')
+          console.log(chalk.gray('# create a new project with an template'))
+        } 
+      }
+    )
+    .parse(process.argv);
 
-  program.parse(process.argv)
+
   if (program.args.length < 1) return program.help()
 }
 
@@ -82,8 +88,8 @@ function run(templateName, targetPath) {
       console.log('构建完成')
       console.log(`🎉  Successfully created project ${templateName}.`)
       console.log(`👉  Get started with the following commands:`)
-      console.log(` $ cd ${templateName}`)
-      console.log(` $ yarn serve`)
+      console.log(`  $ cd ${templateName}`)
+      // console.log(`  $ yarn serve`)
       
       if (err) console.log(err) // 如果构建失败就输出失败原因
     })
