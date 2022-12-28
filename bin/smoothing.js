@@ -19,20 +19,6 @@ const { readFile } = require('fs/promises')
  * 会输出提示------------------
  */
 function init () {
-  // ({ clear = true }) => {
-  //   unhandled();
-    // welcome({
-    //   title: `smoothing`,
-    //   tagLine: `by Brandon Zhang`,
-    //   description: pkg.description,
-    //   version: pkg.version,
-    //   bgColor: '#36BB09',
-    //   color: '#000000',
-    //   bold: true,
-    //   // clear
-    // });
-  // }
-
   program
     .version(pkg.version)
     .on('--help', 
@@ -47,7 +33,7 @@ function init () {
     .parse(process.argv);
 
 
-  if (program.args.length < 1) return program.help()
+  if (program.args.length < 1) return program.help();
 }
 
 function start() {
@@ -77,10 +63,10 @@ function start() {
  */
 function run(templateName, targetPath) {
   const spinner = ora({
+    // 下载的时候给到更多的提示 作者信息等
     text: `${chalk.green('downloading template')}`,
   })
   spinner.start()
-  // TODO 这里可以先获取用户输入，然后下载文件的时候过滤去填充
   download(`GGupzHH/Vue3-Vite3-TS-Template#y-cli-template`, targetPath, {}, err => {
     spinner.stop()
     if (err) return
@@ -97,6 +83,4 @@ function run(templateName, targetPath) {
   })
 }
 
-// console.log(process.cwd())
-start()
-// init()
+start();
