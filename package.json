@@ -2,9 +2,9 @@
   "name": "smoothing",
   "version": "0.0.5",
   "description": "vue template cli",
-  "homepage": "https://github.com/GGupzHH/y-vue-cli",
+  "homepage": "https://github.com/GGupzHH/smoothing",
   "bin": {
-    "g-vue-cli": "./bin/y-vue-cli.js"
+    "smoothing": "./bin/smoothing.js"
   },
   "author": {
     "name": "GGupzHH",
@@ -66,6 +66,6 @@
     "plugins": []
   },
   "scripts": {},
-  "repository": "git@github.com:GGupzHH/y-vue-cli.git",
+  "repository": "git@github.com:GGupzHH/smoothing.git",
   "license": "MIT"
 }
