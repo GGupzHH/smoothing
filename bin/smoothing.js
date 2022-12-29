@@ -15,40 +15,32 @@ const { readFile } = require('fs/promises')
 
 /**
  * 注册一个help的命令
- * 当在终端输入 dg --help 或者没有跟参数的话
+ * 当在终端输入 smoothing --help 或者没有跟参数的话
  * 会输出提示------------------
  */
-function init () {
+function initProgram () {
+  // program
+  //   .command('create <app-name>')
+  //   .description('create a new project')
+
   program
     .version(pkg.version)
-    .on('--help', 
-      () => { 
-        {
-          console.log()
-          console.log('Examples:')
-          console.log(chalk.gray('# create a new project with an template'))
-        } 
-      }
-    )
     .parse(process.argv);
-
 
   if (program.args.length < 1) return program.help();
 }
 
 function start() {
 
-  init()
+  initProgram()
   /**
    * 获取命令行参数
    */
   const templateName = program.args[0] // 命令行第一个参数 文件夹名字 template
-  console.log(program.args, '-----')
   /**
    * 获取项目和模版的完整路径
   */
   const targetPath = path.join(process.cwd(), templateName) // 模版的路径  cwd是当前运行的脚本是在哪个路径下运行 tem
-  console.log(targetPath)
 
   if (exists.existsSync(targetPath)) {
     console.log(chalk.red('  # The same project name already exists in the current directory.'))
