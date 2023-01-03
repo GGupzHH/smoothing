@@ -63,10 +63,9 @@ function run(templateName, targetPath) {
     spinner.stop()
     if (err) return
     generate(templateName, targetPath, (err) => { // 构建完成的回调函数
-      console.log('构建完成')
       console.log(`🎉  Successfully created project ${templateName}.`)
       console.log(`👉  Get started with the following commands:`)
-      console.log(`  $ cd ${templateName}`)
+      console.log(`  $ cd ./${templateName}`)
       // console.log(`  $ yarn serve`)
       
       if (err) console.log(err) // 如果构建失败就输出失败原因
