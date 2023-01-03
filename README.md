@@ -4,19 +4,19 @@
 ## Installation
 
 ```sh
-$ npm install --save y-vue-cli
+$ npm install -g smoothing
 ```
 
 ## Usage
 
-```js
-const yVueCli = require('y-vue-cli');
+```sh
+smoothing templateName
 
-yVueCli('Rainbow');
+smo templateName
 ```
 ## License
 
-MIT © [赵雅国](https://github.com/GGupzHH)
+MIT © [GGupzHH](https://github.com/GGupzHH)
 
 
 [npm-image]: https://badge.fury.io/js/y-vue-cli.svg
