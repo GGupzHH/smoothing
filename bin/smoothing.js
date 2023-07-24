@@ -51,7 +51,7 @@ function start() {
 }
 
 /**
- * run函数则是用来调用generate来构建项目
+ * 调用generate来构建项目
  */
 function run(templateName, targetPath) {
   const spinner = ora({
@@ -62,11 +62,12 @@ function run(templateName, targetPath) {
   download(`GGupzHH/Vue3-Vite3-TS-Template#y-cli-template`, targetPath, {}, err => {
     spinner.stop()
     if (err) return
-    generate(templateName, targetPath, (err) => { // 构建完成的回调函数
+    generate(templateName, targetPath, (err) => { 
+
+      // 构建完成的回调函数
       console.log(`🎉  Successfully created project ${templateName}.`)
       console.log(`👉  Get started with the following commands:`)
       console.log(`  $ cd ./${templateName}`)
-      // console.log(`  $ yarn serve`)
       
       if (err) console.log(err) // 如果构建失败就输出失败原因
     })
